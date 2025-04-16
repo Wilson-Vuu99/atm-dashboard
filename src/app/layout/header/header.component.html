@@ -1,0 +1,20 @@
+<!-- Navbar -->
+<c-navbar colorScheme="dark" class="bg-dark">
+  <c-container fluid>
+    <!-- Navbar Brand -->
+    <a class="navbar-brand" href="#">Brand</a>
+
+    <!-- Navbar Toggler Button -->
+    <button class="navbar-toggler" [cNavbarToggler]="collapseRef" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </c-container>
+</c-navbar>
+
+<!-- Collapsible content -->
+<div #collapseRef="cCollapse" cCollapse [class.show]="!isCollapsed">
+  <div class="bg-dark p-4">
+    <h5 class="text-body-emphasis h4">Collapsed content</h5>
+    <span class="text-body-secondary">Toggleable via the navbar brand.</span>
+  </div>
+</div>
