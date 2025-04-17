@@ -1,14 +1,17 @@
-import { Component } from '@angular/core';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component'; // Import MainLayoutComponent
-import { DefaultHeaderComponent } from './layout/header/header.component';
+// app.component.ts
+
+import { Component, importProvidersFrom } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { MainLayoutComponent } from './layout/main-layout/main-layout.component'; 
+import { routes } from './app.routes'; 
+
+
 
 @Component({
   selector: 'app-root',
-  standalone: true,  // Mark as a standalone component
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [MainLayoutComponent, DefaultHeaderComponent],  // Import the components used in the template
+  standalone: true,
+  imports: [RouterModule, MainLayoutComponent]
 })
-export class AppComponent {
-  title = 'ATM Dashboard';
-}
+export class AppComponent {}

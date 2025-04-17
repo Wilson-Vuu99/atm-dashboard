@@ -1,6 +1,19 @@
-<app-header></app-header>
+<div class="d-flex flex-column" style="height: 100vh; border: 2px solid red;">
+  <!-- Header -->
+  
+  <app-header> </app-header>
+  
 
-<!-- Main container layout -->
-<div class="container-fluid">
-  <p>Test content goes here</p>
+  <!-- Sidebar + Main -->
+  <div class="d-flex flex-grow-1" style="border: 2px solid purple;">
+    <!-- Sidebar -->
+    <div style="width: 30%; border: 2px solid blue; padding: 1rem;">
+      <app-sidebar></app-sidebar>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-grow-1" style="border: 2px solid green; padding: 1rem;">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

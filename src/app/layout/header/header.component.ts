@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
-import { CollapseDirective, ContainerComponent, NavbarComponent, NavbarTogglerDirective } from '@coreui/angular';
+import { SharedCoreUIModule} from '../../shared/coreui.module.ts'
 
 @Component({
-  selector: 'app-header',
   standalone: true,
+  selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
-  imports: [
-    CollapseDirective,
-    NavbarComponent,
-    ContainerComponent,
-    NavbarTogglerDirective,
-  ]
+  imports: [SharedCoreUIModule], // Use shared CoreUI module here
 })
-export class DefaultHeaderComponent {
-  // State for controlling collapse
-  isCollapsed = true;  // Set initial state of collapse
+export class MainHeaderComponent {
+  isCollapsed = true;
+
+  toggleNavbar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }

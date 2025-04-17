@@ -1,1 +1,32 @@
-<p>sidebar works!</p>
+<!-- Sidebar -->
+<c-sidebar
+  #sidebar1="cSidebar"
+  class="d-print-none sidebar sidebar-fixed border-end"
+  colorScheme="dark"
+  id="sidebar1"
+  visible
+>
+  <c-sidebar-header class="border-bottom">
+    <c-sidebar-brand [routerLink]="[]">
+      <svg [class]="{icon: false}" cIcon class="sidebar-brand-full" height="32" name="logo" title="CoreUI Logo"></svg>
+      <svg cIcon class="sidebar-brand-narrow" height="32" name="signet" title="CoreUI Logo"></svg>
+    </c-sidebar-brand>
+  </c-sidebar-header>
+
+  <ng-scrollbar pointerEventsMethod="scrollbar" visibility="hover">
+    <c-sidebar-nav [navItems]="navItems" dropdownMode="close" compact>
+      <ng-template let-item="item" pTemplate="item">
+        <a [routerLink]="item.path" class="nav-link">
+          <!-- CoreUI Icon -->
+          <coreui-icon [name]="item.icon" class="me-2"></coreui-icon> <!-- Rendering the icon -->
+          <span>{{ item.name }}</span>
+        </a>
+      </ng-template>
+    </c-sidebar-nav>
+  </ng-scrollbar>
+
+  <!-- Footer (Visible when sidebar is not narrow) -->
+  <c-sidebar-footer cSidebarToggle="sidebar1" class="border-top d-none d-lg-flex" toggle="unfoldable" style="cursor: pointer;">
+    <button cSidebarToggler aria-label="Toggle sidebar fold"></button>
+  </c-sidebar-footer>
+</c-sidebar>

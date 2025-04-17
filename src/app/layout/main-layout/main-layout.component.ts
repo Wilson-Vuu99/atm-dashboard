@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
-import { DefaultHeaderComponent } from '../header/header.component';
+import { RouterOutlet } from '@angular/router';
+import { SharedCoreUIModule} from '../../shared/coreui.module.ts'
+import { MainHeaderComponent } from '../header/header.component';
+import { MainSidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
-  selector: 'app-mainlayout',
-  standalone: true,
+  selector: 'app-main-layout',
   templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.css'],
-  imports: [DefaultHeaderComponent],
+  imports: [
+    RouterOutlet,
+    SharedCoreUIModule,
+    MainHeaderComponent,
+    MainSidebarComponent
+  ]
 })
 export class MainLayoutComponent {}
