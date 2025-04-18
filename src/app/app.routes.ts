@@ -2,14 +2,13 @@ import { Routes } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 
-export const routes: Routes = [
+
+export const appRoutes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent }
-    ]
+      { path: '', component: DashboardComponent },
+    ],
   },
-  { path: '**', redirectTo: '' }
 ];

@@ -1,15 +1,27 @@
-<c-header position="sticky" class="mb-4 border-bottom">
-  <div class="container-fluid d-flex justify-content-between align-items-center">
+<c-header position="sticky" class="mb-4">
+  <c-container fluid>
+    
+    <c-header-brand routerLink="/">
+      <img src="../../assets/MM_logo.png" height="32" alt="Logo" />
+    </c-header-brand>
 
-    <!-- Left side: Title or logo -->
-    <h5 class="mb-0">Transaction search</h5>
+    <!-- CoreUI Header Nav -->
+    <c-header-nav class="d-none d-md-flex me-auto">
+      <c-nav-item>
+        <c-nav-link routerLink="/dashboard">
+          Dashboard
+        </c-nav-link>
+      </c-nav-item>
+      <c-nav-item>
+        <c-nav-link routerLink="/settings">
+          Settings
+        </c-nav-link>
+      </c-nav-item>
+    </c-header-nav>
 
-    <!-- Right side: Placeholder for buttons, avatar, etc. -->
-    <div class="d-flex align-items-center gap-3">
-      <!-- You can add export/print buttons, user icon, etc. here -->
-      <button class="btn btn-outline-primary btn-sm">Export</button>
-      <button class="btn btn-outline-secondary btn-sm">Print</button>
-    </div>
-
-  </div>
+    <!-- Notification and User Profile -->
+    <c-header-nav>
+      
+    </c-header-nav>
+  </c-container>
 </c-header>

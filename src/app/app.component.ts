@@ -1,17 +1,10 @@
-// app.component.ts
-
-import { Component, importProvidersFrom } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component'; 
-import { routes } from './app.routes'; 
-
-
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [RouterModule, MainLayoutComponent]
+  imports: [RouterOutlet],
+  template: `<router-outlet></router-outlet>`,
 })
 export class AppComponent {}

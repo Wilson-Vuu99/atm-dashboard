@@ -1,19 +1,7 @@
-<div class="d-flex flex-column" style="height: 100vh; border: 2px solid red;">
-  <!-- Header -->
-  
-  <app-header> </app-header>
-  
+<app-main-header></app-main-header>
 
-  <!-- Sidebar + Main -->
-  <div class="d-flex flex-grow-1" style="border: 2px solid purple;">
-    <!-- Sidebar -->
-    <div style="width: 30%; border: 2px solid blue; padding: 1rem;">
-      <app-sidebar></app-sidebar>
-    </div>
-
-    <!-- Main Content -->
-    <div class="flex-grow-1" style="border: 2px solid green; padding: 1rem;">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
+<div class="wrapper d-flex flex-row min-vh-100 bg-light">
+  <main class="body flex-grow-1 px-3">
+    <router-outlet></router-outlet>
+  </main>
 </div>

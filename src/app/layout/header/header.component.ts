@@ -1,16 +1,43 @@
-import { Component } from '@angular/core';
-import { SharedCoreUIModule} from '../../shared/coreui.module.ts'
+import { Component, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+
+import {
+  HeaderModule,
+  HeaderBrandComponent,
+  HeaderNavComponent,
+  NavItemComponent,
+  NavLinkDirective,
+  ContainerComponent,
+  NavbarModule,
+} from '@coreui/angular';
+import { IconModule, IconSetService } from '@coreui/icons-angular';
+import { cilUser, cilBell } from '@coreui/icons';
 
 @Component({
+  selector: 'app-main-header',
   standalone: true,
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  imports: [SharedCoreUIModule], // Use shared CoreUI module here
+  imports: [
+    CommonModule,
+    RouterModule,
+    IconModule,
+    HeaderModule,
+    NavbarModule,
+    ContainerComponent,
+    HeaderBrandComponent,
+    HeaderNavComponent,
+    NavItemComponent,
+    NavLinkDirective,
+  ],
+  templateUrl: './header.component.html'
 })
 export class MainHeaderComponent {
-  isCollapsed = true;
+  private iconSet = inject(IconSetService);
 
-  toggleNavbar() {
-    this.isCollapsed = !this.isCollapsed;
+  constructor() {
+    this.iconSet.icons = {
+      cilBell,
+      cilUser,
+    };
   }
 }
