@@ -7,12 +7,15 @@ import {
   HeaderBrandComponent,
   HeaderNavComponent,
   NavItemComponent,
-  NavLinkDirective,
+  SidebarModule,
   ContainerComponent,
   NavbarModule,
+  SidebarToggleDirective,
+  ButtonModule,
+  SidebarNavComponent,
 } from '@coreui/angular';
 import { IconModule, IconSetService } from '@coreui/icons-angular';
-import { cilUser, cilBell } from '@coreui/icons';
+import { cilUser, cilBell,cilMenu } from '@coreui/icons';
 
 @Component({
   selector: 'app-main-header',
@@ -27,7 +30,10 @@ import { cilUser, cilBell } from '@coreui/icons';
     HeaderBrandComponent,
     HeaderNavComponent,
     NavItemComponent,
-    NavLinkDirective,
+    SidebarModule,
+    SidebarToggleDirective,
+    ButtonModule,
+    SidebarNavComponent,
   ],
   templateUrl: './header.component.html'
 })
@@ -38,6 +44,7 @@ export class MainHeaderComponent {
     this.iconSet.icons = {
       cilBell,
       cilUser,
+      cilMenu
     };
   }
 }

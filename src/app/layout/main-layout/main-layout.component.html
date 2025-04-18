@@ -1,7 +1,13 @@
-<app-main-header></app-main-header>
+<!-- <c-header position="sticky"> -->
+  <app-main-header></app-main-header> 
+<!-- </c-header>
 
-<div class="wrapper d-flex flex-row min-vh-100 bg-light">
-  <main class="body flex-grow-1 px-3">
-    <router-outlet></router-outlet>
-  </main>
-</div>
+<c-sidebar id="my-sidebar" position="fixed" visible="true">
+  <c-sidebar-nav>
+    <c-sidebar-nav-item routerLink="/dashboard" name="Dashboard"></c-sidebar-nav-item>
+  </c-sidebar-nav>
+</c-sidebar> -->
+
+<main class="body flex-grow-1 px-3">
+  <router-outlet></router-outlet>
+</main>
