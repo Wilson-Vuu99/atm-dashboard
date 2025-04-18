@@ -1,0 +1,25 @@
+<div class="dashboard">
+  <h1>Transactions</h1>
+
+  <!-- Date Range Picker Form -->
+  <form>
+    <mat-form-field appearance="fill">
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="startDatePicker" [(ngModel)]="startDate">
+      <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #startDatePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>End Date</mat-label>
+      <input matInput [matDatepicker]="endDatePicker" [(ngModel)]="endDate">
+      <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #endDatePicker></mat-datepicker>
+    </mat-form-field>
+  </form>
+
+  <!-- Show selected range -->
+  <div *ngIf="startDate && endDate">
+    <p>Selected Date Range: {{ startDate | date }} - {{ endDate | date }}</p>
+  </div>
+</div>
